@@ -47,25 +47,37 @@ function handleNoClick() {
 }
 
 function handleYesClick() {
-    document.getElementById('location-button-container').style.display = 'block';
-    // Hide the original buttons if desired
-    document.querySelector('.buttons').style.display = 'none';
+    window.location.href = 'yes_page.html';
 }
 
-function showLocation() {
+document.addEventListener('DOMContentLoaded', () => {
+    const locationBtn = document.querySelector('.location-button');
     const modal = document.getElementById('modal');
-    modal.style.display = 'block';
-}
+    const closeBtn = document.querySelector('.close');
 
-// Close modal when clicking on X
-document.querySelector('.close').onclick = function() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    // Show modal function
+    function showLocation() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
-}
+
+    // Close modal function
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Event listeners
+    locationBtn.addEventListener('click', showLocation);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+    });
+});
