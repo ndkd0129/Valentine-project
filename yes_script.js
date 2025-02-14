@@ -1,4 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
+    const nameInput = document.getElementById('name-input');
+    const nameSubmit = document.getElementById('name-submit');
+    const locationBox = document.getElementById('location-box');
+    const correctNames = ['khắc du', 'anh du', 'du nguyen'];
+
+    nameInput.addEventListener('input', function () {
+        if (correctNames.includes(nameInput.value.trim().toLowerCase())) {
+            nameSubmit.classList.remove('disabled');
+            nameSubmit.disabled = false;
+        } else {
+            nameSubmit.classList.add('disabled');
+            nameSubmit.disabled = true;
+        }
+    });
+
+    nameSubmit.addEventListener('click', function () {
+        document.getElementById('name-box').classList.add('hidden');
+        locationBox.classList.remove('hidden');
+    });
+
     const locationBtn = document.querySelector('.location-button');
     const modal = document.getElementById('modal');
     const closeBtn = document.querySelector('.close');
