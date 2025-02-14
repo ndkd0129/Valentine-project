@@ -222,3 +222,99 @@ window.onclick = function(event) {
         font-size: 1em;
     }
 }
+/* Style for the new message box */
+.message-box {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.message-box h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.message-box input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.message-box button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-box button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.message-box button:not(.disabled):hover {
+    background-color: #ff4c4c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header_text {
+        font-size: 2em;
+    }
+
+    .location-button {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .location-details p {
+        font-size: 1em;
+    }
+
+    .note {
+        font-size: 0.9em;
+    }
+
+    .message-box input {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .header_text {
+        font-size: 3em;
+    }
+
+    .location-button {
+        padding: 18px 35px;
+        font-size: 1.3em;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .location-details p {
+        font-size: 1.15em;
+    }
+
+    .note {
+        font-size: 1em;
+    }
+}
