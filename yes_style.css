@@ -146,11 +146,6 @@ body {
     animation: gradientBorder 5s infinite;
 }
 
-.message-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
 .message-box h2 {
     color: #ff6b6b;
     font-size: 2em;
@@ -173,7 +168,7 @@ body {
 .message-box input:focus {
     border-color: #ff6b6b;
     outline: none;
-    box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
+    box-shadow: none; /* Removed hover effect */
     background: #ffffff;
 }
 
@@ -195,7 +190,6 @@ body {
 .message-box button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
-    background-position: 100% 50%;
 }
 
 .message-box button.disabled {
