@@ -91,6 +91,10 @@ body {
     line-height: 1.4;
 }
 
+.location-details strong {
+    color: #4CAF50; /* Green text color */
+}
+
 .note {
     color: #ff6b6b !important;
     font-style: italic;
@@ -183,6 +187,11 @@ body {
     animation: none;
 }
 
+.message-box button:enabled {
+    background: linear-gradient(135deg, #4CAF50, #81C784, #4CAF50); /* Green color */
+    animation: none; /* Disable animation */
+}
+
 @keyframes gradientBorder {
     0% {
         background-position: 0% 50%;
@@ -229,10 +238,6 @@ h2 {
     margin-bottom: 25px;
     font-size: 1.8em;
     text-shadow: 1px 1px 2px rgba(76, 175, 80, 0.1);
-}
-
-.location-details strong {
-    color: #ff6b6b;
 }
 
 @media (max-width: 768px) {
