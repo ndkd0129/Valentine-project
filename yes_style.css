@@ -119,7 +119,7 @@ body {
 .message-box {
     text-align: center;
     padding: 40px 30px;
-    background: linear-gradient(145deg, #ffffff, #f8fff9);
+    background: #ffffff; /* Ensure the background color stays white */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
@@ -146,6 +146,12 @@ body {
     animation: gradientBorder 5s infinite;
 }
 
+.message-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff; /* Keep the background color white on hover */
+}
+
 .message-box h2 {
     color: #ff6b6b;
     font-size: 2em;
@@ -159,10 +165,11 @@ body {
     font-size: 1.1em;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: 100%;
+    width: calc(100% - 30px); /* Adjust width to fit within the box */
     margin-bottom: 25px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background: #f9f9f9;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 .message-box input:focus {
@@ -280,7 +287,7 @@ h2 {
     }
 
     .message-box input {
-        width: 100%;
+        width: calc(100% - 30px); /* Ensure input stays within the box on mobile */
     }
 }
 
