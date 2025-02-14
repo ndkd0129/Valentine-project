@@ -1,3 +1,120 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3em;
+    color: #d32f2f;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
+
+#location-button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.location-button {
+    padding: 18px 35px;
+    font-size: 1.3em;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ff6b6b);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+    transition: all 0.4s ease;
+    animation: softPulse 2s infinite, gradient 3s ease infinite;
+}
+
+.location-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    background: linear-gradient(135deg, #ff8e8e, #ff6b6b, #ffa5a5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #f8fff9);
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideIn 0.4s ease;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+    text-align: center;
+}
+
+.location-details {
+    padding: 25px;
+    background: linear-gradient(145deg, #f1f8e9, #f9fbe7);
+    border-radius: 15px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.location-details p {
+    margin: 15px 0;
+    font-size: 1.15em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.note {
+    color: #ff6b6b !important;
+    font-style: italic;
+    margin-top: 25px !important;
+    padding: 15px;
+    border-top: 2px dashed rgba(255, 107, 107, 0.3);
+    background: linear-gradient(145deg, #e8f5e9, #f1f8e9);
+    border-radius: 0 0 15px 15px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #4CAF50;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #2e7d32;
+    transform: rotate(90deg);
+}
+
 /* Enhanced Message Box Design */
 .message-box {
     text-align: center;
@@ -98,5 +215,101 @@
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes softPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+h2 {
+    text-align: center;
+    color: #ff6b6b;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px rgba(76, 175, 80, 0.1);
+}
+
+.location-details strong {
+    color: #ff6b6b;
+    background: linear-gradient(120deg, #4CAF50, #66bb6a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header_text {
+        font-size: 2em;
+    }
+
+    .location-button {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .location-details p {
+        font-size: 1em;
+    }
+
+    .note {
+        font-size: 0.9em;
+    }
+
+    .message-box input {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .header_text {
+        font-size: 3em;
+    }
+
+    .location-button {
+        padding: 18px 35px;
+        font-size: 1.3em;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .location-details p {
+        font-size: 1.15em;
+    }
+
+    .note {
+        font-size: 1em;
     }
 }
