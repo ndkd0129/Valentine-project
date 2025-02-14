@@ -63,7 +63,7 @@ body {
 }
 
 .modal-content {
-    background: linear-gradient(145deg, #ffffff, #f8fff9);
+    background: #ffffff;
     margin: 10% auto;
     padding: 30px;
     width: 90%;
@@ -130,26 +130,10 @@ body {
     background-clip: padding-box;
 }
 
-/* Gradient Border Effect */
-.message-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    margin: -2px; /* Adjust for the border width */
-    border-radius: inherit;
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ff6b6b);
-    background-size: 200% 200%;
-    animation: gradientBorder 5s infinite;
-}
-
+/* Removed message-box hover effect */
 .message-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: #ffffff; /* Keep the background color white on hover */
 }
 
 .message-box h2 {
@@ -165,7 +149,7 @@ body {
     font-size: 1.1em;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: calc(100% - 30px); /* Adjust width to fit within the box */
+    width: calc(100% - 40px); /* Adjust width to fit within the box */
     margin-bottom: 25px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background: #f9f9f9;
@@ -287,7 +271,7 @@ h2 {
     }
 
     .message-box input {
-        width: calc(100% - 30px); /* Ensure input stays within the box on mobile */
+        width: calc(100% - 40px); /* Ensure input stays within the box on mobile */
     }
 }
 
