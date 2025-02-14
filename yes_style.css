@@ -77,27 +77,29 @@ body {
 }
 
 .location-details {
-    padding: 25px;
-    background: linear-gradient(145deg, #f1f8e9, #f9fbe7);
+    padding: 20px 15px;
+    background: #f1f8e9;
     border-radius: 15px;
     border: 1px solid rgba(76, 175, 80, 0.2);
+    text-align: left;
 }
 
 .location-details p {
-    margin: 15px 0;
-    font-size: 1.15em;
+    margin: 10px 0;
+    font-size: 1.1em;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 .note {
     color: #ff6b6b !important;
     font-style: italic;
-    margin-top: 25px !important;
-    padding: 15px;
+    margin-top: 20px !important;
+    padding: 10px;
     border-top: 2px dashed rgba(255, 107, 107, 0.3);
-    background: linear-gradient(145deg, #e8f5e9, #f1f8e9);
+    background: #e8f5e9;
     border-radius: 0 0 15px 15px;
+    text-align: left;
 }
 
 .close {
@@ -119,21 +121,14 @@ body {
 .message-box {
     text-align: center;
     padding: 40px 30px;
-    background: #ffffff; /* Ensure the background color stays white */
+    background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
     background-clip: padding-box;
-}
-
-/* Removed message-box hover effect */
-.message-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .message-box h2 {
@@ -149,17 +144,15 @@ body {
     font-size: 1.1em;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: calc(100% - 40px); /* Adjust width to fit within the box */
+    width: calc(100% - 40px); 
     margin-bottom: 25px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background: #f9f9f9;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    box-sizing: border-box;
 }
 
 .message-box input:focus {
     border-color: #ff6b6b;
     outline: none;
-    box-shadow: none; /* Removed hover effect */
     background: #ffffff;
 }
 
@@ -190,7 +183,6 @@ body {
     animation: none;
 }
 
-/* Gradient Border Animation */
 @keyframes gradientBorder {
     0% {
         background-position: 0% 50%;
@@ -241,13 +233,8 @@ h2 {
 
 .location-details strong {
     color: #ff6b6b;
-    background: linear-gradient(120deg, #4CAF50, #66bb6a);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .header_text {
         font-size: 2em;
@@ -271,7 +258,7 @@ h2 {
     }
 
     .message-box input {
-        width: calc(100% - 40px); /* Ensure input stays within the box on mobile */
+        width: calc(100% - 40px);
     }
 }
 
