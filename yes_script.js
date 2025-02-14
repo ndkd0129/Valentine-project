@@ -1,9 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const nameModal = document.getElementById('name-modal');
+    const locationModal = document.getElementById('location-modal');
     const nameInput = document.getElementById('name-input');
     const nameSubmit = document.getElementById('name-submit');
-    const locationBox = document.getElementById('location-box');
-    const correctNames = ['khắc du', 'anh du', 'du nguyen'];
+    const correctNames = ['khắc du', 'anh du', 'du nguyen', 'du'];
+    
+    // Show name modal when 'Địa điểm nè' button is clicked
+    document.querySelector('.location-button').addEventListener('click', function () {
+        nameModal.style.display = 'block';
+    });
 
+    // Validate name input
     nameInput.addEventListener('input', function () {
         if (correctNames.includes(nameInput.value.trim().toLowerCase())) {
             nameSubmit.classList.remove('disabled');
@@ -14,38 +21,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Show location modal if the correct name is entered
     nameSubmit.addEventListener('click', function () {
-        document.getElementById('name-box').classList.add('hidden');
-        locationBox.classList.remove('hidden');
+        nameModal.style.display = 'none';
+        locationModal.style.display = 'block';
     });
 
-    const locationBtn = document.querySelector('.location-button');
-    const modal = document.getElementById('modal');
-    const closeBtn = document.querySelector('.close');
+    // Close the location modal
+    document.querySelector('.close').onclick = function () {
+        locationModal.style.display = 'none';
+    };
 
-    // Show modal function
-    function showLocation() {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Close modal function
-    function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    // Event listeners
-    locationBtn.addEventListener('click', showLocation);
-    closeBtn.addEventListener('click', closeModal);
-
-    // Close on outside click
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
-    });
+    // Close modals when clicking outside of them
+    window.onclick = function (event) {
+        if (event.target === nameModal) {
+            nameModal.style.display = 'none';
+        } else if (event.target === locationModal) {
+            locationModal.style.display = 'none';
+        }
+    };
 });
