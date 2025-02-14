@@ -175,3 +175,50 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header_text {
+        font-size: 2em;
+    }
+
+    .location-button {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .location-details p {
+        font-size: 1em;
+    }
+
+    .note {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 769px) {
+    .header_text {
+        font-size: 3em;
+    }
+
+    .location-button {
+        padding: 18px 35px;
+        font-size: 1.3em;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .location-details p {
+        font-size: 1.15em;
+    }
+
+    .note {
+        font-size: 1em;
+    }
+}
